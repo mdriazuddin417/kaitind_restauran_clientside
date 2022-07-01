@@ -1,14 +1,15 @@
 import { useEffect } from "react";
 import { useState } from "react";
 
-const useProducts = () => {
+const useProducts = (value) => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("products.json")
+    const url = `http://localhost:5000/${value}`;
+    fetch(url)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
-  return [products, setProducts];
+  return [products];
 };
 
 export default useProducts;

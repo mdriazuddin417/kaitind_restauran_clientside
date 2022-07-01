@@ -1,72 +1,82 @@
 [
     {
       "_id": "62bd734e41ba4369bbcf4a1a",
-      "balance": "$111",
-      "picture": "https://i.ibb.co/FWK1KLJ/dinner6.png",
+      "price": 111,
+      "image": "https://i.ibb.co/FWK1KLJ/dinner6.png",
       "name": "Spicy Paneer Schezwan Bowl",
-      "category": "MEALS FOR STEAL"
+      "category": "MEALS FOR STEAL",
+      "text":"What meal is dinner?evening mealIn many modern usages, the term dinner refers to the evening meal, which is now typically the largest meal of the day in most Western cultures. When this meaning is used, the preceding meals are usually referred to as breakfast, lunch and perhaps a tea."
     },
     {
       "_id": "62bd734e077f388f755aa086",
-      "balance": "$392",
-      "picture": "https://i.ibb.co/6ZY9DnK/dinner4.png",
+      "price": 392,
+      "image": "https://i.ibb.co/6ZY9DnK/dinner4.png",
       "name": "Paneer Schezwan Quinoa Brown Rice",
-      "category": "MEALS FOR STEAL"
+      "category": "MEALS FOR STEAL",
+      "text":"What meal is dinner?evening mealIn many modern usages, the term dinner refers to the evening meal, which is now typically the largest meal of the day in most Western cultures. When this meaning is used, the preceding meals are usually referred to as breakfast, lunch and perhaps a tea."
     },
     {
       "_id": "62bd734e87f037c897d51820",
-      "balance": "$149",
-      "picture": "https://i.ibb.co/BVcqNhD/dinner5.png",
+      "price": 149,
+      "image": "https://i.ibb.co/BVcqNhD/dinner5.png",
       "name": "Peri-Peri Double Chicken Burger",
-      "category": "MEALS FOR STEAL"
+      "category": "MEALS FOR STEAL",
+      "text":"What meal is dinner?evening mealIn many modern usages, the term dinner refers to the evening meal, which is now typically the largest meal of the day in most Western cultures. When this meaning is used, the preceding meals are usually referred to as breakfast, lunch and perhaps a tea."
     },
     {
       "_id": "62bd734e0ab939ebadd39c53",
-      "balance": "$251",
-      "picture": "https://i.ibb.co/FWK1KLJ/dinner6.png",
+      "price": 251,
+      "image": "https://i.ibb.co/FWK1KLJ/dinner6.png",
       "name": "Mexican-Burrito Bowl",
-      "category": "MEALS FOR STEAL"
+      "category": "MEALS FOR STEAL",
+      "text":"What meal is dinner?evening mealIn many modern usages, the term dinner refers to the evening meal, which is now typically the largest meal of the day in most Western cultures. When this meaning is used, the preceding meals are usually referred to as breakfast, lunch and perhaps a tea."
     },
     {
       "_id": "62bd734ee8d1314990c89e3c",
-      "balance": "$314",
-      "picture": "https://i.ibb.co/BVcqNhD/dinner5.png",
+      "price": 314,
+      "image": "https://i.ibb.co/BVcqNhD/dinner5.png",
       "name": "Hawker's Chilli Chicken Bowl",
-      "category": "MEALS FOR STEAL"
+      "category": "MEALS FOR STEAL",
+      "text":"What meal is dinner?evening mealIn many modern usages, the term dinner refers to the evening meal, which is now typically the largest meal of the day in most Western cultures. When this meaning is used, the preceding meals are usually referred to as breakfast, lunch and perhaps a tea."
     },
     {
       "_id": "62bd734e41ba4369bbcf431a",
-      "balance": "$111",
-      "picture": "https://i.ibb.co/FWK1KLJ/dinner6.png",
+      "price": 111,
+      "image": "https://i.ibb.co/FWK1KLJ/dinner6.png",
       "name": "Spicy Paneer Schezwan Bowl",
-      "category": "MEALS FOR STEAL"
+      "category": "MEALS FOR STEAL",
+      "text":"What meal is dinner?evening mealIn many modern usages, the term dinner refers to the evening meal, which is now typically the largest meal of the day in most Western cultures. When this meaning is used, the preceding meals are usually referred to as breakfast, lunch and perhaps a tea."
     },
     {
       "_id": "62bd734e077f388f755aa036",
-      "balance": "$392",
-      "picture": "https://i.ibb.co/6ZY9DnK/dinner4.png",
+      "price": 392,
+      "image": "https://i.ibb.co/6ZY9DnK/dinner4.png",
       "name": "Paneer Schezwan Quinoa Brown Rice",
-      "category": "MEALS FOR STEAL"
+      "category": "MEALS FOR STEAL",
+      "text":"What meal is dinner?evening mealIn many modern usages, the term dinner refers to the evening meal, which is now typically the largest meal of the day in most Western cultures. When this meaning is used, the preceding meals are usually referred to as breakfast, lunch and perhaps a tea."
     },
     {
       "_id": "62bd734e87f037c897d51840",
-      "balance": "$149",
-      "picture": "https://i.ibb.co/BVcqNhD/dinner5.png",
+      "price": 149,
+      "image": "https://i.ibb.co/BVcqNhD/dinner5.png",
       "name": "Peri-Peri Double Chicken Burger",
-      "category": "MEALS FOR STEAL"
+      "category": "MEALS FOR STEAL",
+      "text":"What meal is dinner?evening mealIn many modern usages, the term dinner refers to the evening meal, which is now typically the largest meal of the day in most Western cultures. When this meaning is used, the preceding meals are usually referred to as breakfast, lunch and perhaps a tea."
     },
     {
       "_id": "62bd734e0ab939ebadd39c52",
-      "balance": "$251",
-      "picture": "https://i.ibb.co/FWK1KLJ/dinner6.png",
+      "price": 251,
+      "image": "https://i.ibb.co/FWK1KLJ/dinner6.png",
       "name": "Mexican-Burrito Bowl",
-      "category": "MEALS FOR STEAL"
+      "category": "MEALS FOR STEAL",
+      "text":"What meal is dinner?evening mealIn many modern usages, the term dinner refers to the evening meal, which is now typically the largest meal of the day in most Western cultures. When this meaning is used, the preceding meals are usually referred to as breakfast, lunch and perhaps a tea."
     },
     {
       "_id": "62bd734ee8d1314990c89ede",
-      "balance": "$314",
-      "picture": "https://i.ibb.co/BVcqNhD/dinner5.png",
+      "price": 314,
+      "image": "https://i.ibb.co/BVcqNhD/dinner5.png",
       "name": "Hawker's Chilli Chicken Bowl",
-      "category": "MEALS FOR STEAL"
+      "category": "MEALS FOR STEAL",
+      "text":"What meal is dinner?evening mealIn many modern usages, the term dinner refers to the evening meal, which is now typically the largest meal of the day in most Western cultures. When this meaning is used, the preceding meals are usually referred to as breakfast, lunch and perhaps a tea."
     }
   ]

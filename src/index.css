@@ -19,5 +19,9 @@ body {
 }
 
 .my-category{
-  @apply hover:underline underline-offset-2 decoration-[tomato] decoration-2 duration-300   
+  @apply hover:underline underline-offset-2 decoration-[tomato] decoration-2 transition-all  hover:text-lg 
+}
+
+html{
+  scroll-behavior: smooth;
 }
