@@ -15,13 +15,6 @@ const Category = () => {
   const [accompaniments] = useProducts("accompaniments");
   const [sides] = useProducts("sides");
 
-  window.addEventListener("scroll", function () {
-    if (window.pageYOffset > 100) {
-      document.getElementById("nav").classList.add("");
-    } else {
-      document.getElementById("nav").classList.remove("");
-    }
-  });
   return (
     <div className="grid grid-cols-5 p-5 gap-5 " id="nav">
       <div className=" ">
@@ -67,7 +60,7 @@ const Category = () => {
           </h2>
           <div className="grid lg:gird-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
             {allday.map((product) => (
-              <Product product={product} key={product._id} />
+              <Product product={product} value={allday} key={product._id} />
             ))}
           </div>
         </section>
@@ -77,7 +70,7 @@ const Category = () => {
           </h2>
           <div className="grid lg:gird-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
             {sandwich.map((product) => (
-              <Product product={product} key={product._id} />
+              <Product product={product} value={sandwich} key={product._id} />
             ))}
           </div>
         </section>
@@ -87,7 +80,7 @@ const Category = () => {
           </h2>
           <div className="grid lg:gird-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
             {burgers.map((product) => (
-              <Product product={product} key={product._id} />
+              <Product product={product} value={burgers} key={product._id} />
             ))}
           </div>
         </section>
@@ -97,7 +90,7 @@ const Category = () => {
           </h2>
           <div className="grid lg:gird-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
             {fresh.map((product) => (
-              <Product product={product} key={product._id} />
+              <Product product={product} value={fresh} key={product._id} />
             ))}
           </div>
         </section>
@@ -107,7 +100,7 @@ const Category = () => {
           </h2>
           <div className="grid lg:gird-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
             {newarrival.map((product) => (
-              <Product product={product} key={product._id} />
+              <Product product={product} value={newarrival} key={product._id} />
             ))}
           </div>
         </section>
@@ -117,7 +110,7 @@ const Category = () => {
           </h2>
           <div className="grid lg:gird-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
             {rice.map((product) => (
-              <Product product={product} key={product._id} />
+              <Product product={product} value={rice} key={product._id} />
             ))}
           </div>
         </section>
@@ -127,7 +120,7 @@ const Category = () => {
           </h2>
           <div className="grid lg:gird-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
             {noodle.map((product) => (
-              <Product product={product} key={product._id} />
+              <Product product={product} value={noodle} key={product._id} />
             ))}
           </div>
         </section>
@@ -137,7 +130,7 @@ const Category = () => {
           </h2>
           <div className="grid lg:gird-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
             {biryani.map((product) => (
-              <Product product={product} key={product._id} />
+              <Product product={product} value={biryani} key={product._id} />
             ))}
           </div>
         </section>
@@ -147,7 +140,7 @@ const Category = () => {
           </h2>
           <div className="grid lg:gird-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
             {sides.map((product) => (
-              <Product product={product} key={product._id} />
+              <Product product={product} value={sides} key={product._id} />
             ))}
           </div>
         </section>
@@ -158,7 +151,11 @@ const Category = () => {
           </h2>
           <div className="grid lg:gird-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
             {accompaniments.map((product) => (
-              <Product product={product} key={product._id} />
+              <Product
+                product={product}
+                value={accompaniments}
+                key={product._id}
+              />
             ))}
           </div>
         </section>

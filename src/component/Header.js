@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
+import { NavLink } from "react-router-dom";
+import { BsCart2 } from "react-icons/bs";
 const Header = () => {
   window.addEventListener("scroll", function () {
     if (window.pageYOffset > 100) {
@@ -15,21 +15,24 @@ const Header = () => {
     <div id="nav" className="top-0">
       <div class="navbar bg-base-100 shadow-lg py-5 px-12 ">
         <div class="flex-1">
-          <Link to={"/"} class="btn btn-ghost normal-case text-xl">
+          <NavLink to={"/"} class="btn btn-ghost normal-case text-xl">
             daisyUI
-          </Link>
+          </NavLink>
         </div>
         <div class="flex-none">
           <ul class="menu menu-horizontal p-0 space-x-3 text-xl">
             <li>
-              <Link to="/home">Home</Link>
+              <NavLink to="/home">Home</NavLink>
             </li>
-            <li>
-              <Link to="/cart">Cart</Link>
+            <li className="border border-primary rounded-xl">
+              <NavLink to="/cart" className="indicator">
+                <BsCart2 className="text-2xl " />
+                <span class="indicator-item badge badge-secondary">9</span>
+              </NavLink>
             </li>
 
             <li>
-              <Link to="/login">Login</Link>
+              <NavLink to="/login">Login</NavLink>
             </li>
           </ul>
         </div>
