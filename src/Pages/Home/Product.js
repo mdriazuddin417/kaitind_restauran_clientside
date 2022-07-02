@@ -1,10 +1,13 @@
 import React from "react";
+import { useState } from "react";
 
 import { Link } from "react-router-dom";
-import Button from "../../component/Button";
+
+import CurrentBtn from "../CurrentBtn";
 
 const Product = ({ product, value }) => {
   const { _id, price, image, category, name, text } = product;
+  const [count, setCount] = useState(0);
 
   return (
     <div className=" p-5 my-shadow  h-full">
@@ -20,7 +23,8 @@ const Product = ({ product, value }) => {
         <h3>{name}</h3>
         <div className="flex justify-between items-center">
           <p className="text-red-900 text-2xl font-bold">$ {price}</p>
-          <Button />
+
+          <CurrentBtn product={product} count={count} setCount={setCount} />
         </div>
       </div>
     </div>

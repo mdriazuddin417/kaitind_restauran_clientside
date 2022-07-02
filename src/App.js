@@ -1,6 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import Header from "./component/Header";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { publicRoutes } from "./routes/publicRoutes";
 
 function App() {
@@ -12,6 +14,7 @@ function App() {
           <Route key={index} path={path} element={<Component />} />
         ))}
       </Routes>
+      <ToastContainer />
     </div>
   );
 }

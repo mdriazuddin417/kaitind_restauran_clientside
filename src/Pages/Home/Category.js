@@ -1,4 +1,5 @@
 import React from "react";
+import Loading from "../../component/Loading";
 
 import useProducts from "../../customeHook/useProducts";
 import Product from "./Product";
@@ -59,7 +60,7 @@ const Category = () => {
             All day breakfast
           </h2>
           <div className="grid lg:gird-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
-            {allday.map((product) => (
+            {allday?.map((product) => (
               <Product product={product} value={allday} key={product._id} />
             ))}
           </div>
@@ -69,7 +70,7 @@ const Category = () => {
             Sandwiches
           </h2>
           <div className="grid lg:gird-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
-            {sandwich.map((product) => (
+            {sandwich?.map((product) => (
               <Product product={product} value={sandwich} key={product._id} />
             ))}
           </div>
@@ -79,7 +80,7 @@ const Category = () => {
             Burgers & Wraps
           </h2>
           <div className="grid lg:gird-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
-            {burgers.map((product) => (
+            {burgers?.map((product) => (
               <Product product={product} value={burgers} key={product._id} />
             ))}
           </div>
@@ -89,7 +90,7 @@ const Category = () => {
             Fresh Desserts
           </h2>
           <div className="grid lg:gird-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
-            {fresh.map((product) => (
+            {fresh?.map((product) => (
               <Product product={product} value={fresh} key={product._id} />
             ))}
           </div>
@@ -99,7 +100,7 @@ const Category = () => {
             New Arrivals
           </h2>
           <div className="grid lg:gird-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
-            {newarrival.map((product) => (
+            {newarrival?.map((product) => (
               <Product product={product} value={newarrival} key={product._id} />
             ))}
           </div>
@@ -109,7 +110,7 @@ const Category = () => {
             Rice Bowls
           </h2>
           <div className="grid lg:gird-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
-            {rice.map((product) => (
+            {rice?.map((product) => (
               <Product product={product} value={rice} key={product._id} />
             ))}
           </div>
@@ -119,7 +120,7 @@ const Category = () => {
             Noodle Bowls
           </h2>
           <div className="grid lg:gird-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
-            {noodle.map((product) => (
+            {noodle?.map((product) => (
               <Product product={product} value={noodle} key={product._id} />
             ))}
           </div>
@@ -129,7 +130,7 @@ const Category = () => {
             Biryanis & Thalis
           </h2>
           <div className="grid lg:gird-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
-            {biryani.map((product) => (
+            {biryani?.map((product) => (
               <Product product={product} value={biryani} key={product._id} />
             ))}
           </div>
@@ -139,7 +140,7 @@ const Category = () => {
             Sides & Beverages
           </h2>
           <div className="grid lg:gird-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
-            {sides.map((product) => (
+            {sides?.map((product) => (
               <Product product={product} value={sides} key={product._id} />
             ))}
           </div>
@@ -150,7 +151,7 @@ const Category = () => {
             Accompaniments
           </h2>
           <div className="grid lg:gird-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
-            {accompaniments.map((product) => (
+            {accompaniments?.map((product) => (
               <Product
                 product={product}
                 value={accompaniments}

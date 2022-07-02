@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
-import Button from "../component/Button";
+
+import CurrentBtn from "./CurrentBtn";
 import MoreProductSingle from "./Home/MoreProductSingle";
-import Product from "./Home/Product";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const location = useLocation();
   const values = location.state.value;
+  const [count, setCount] = useState(0);
 
   const product = values.filter((value) => value._id === id);
   const { image, price, text, name } = product[0];
@@ -24,8 +25,8 @@ const ProductDetails = () => {
             <span className="text-2xl text-[tomato]"> $ {price}</span>
             /Item
           </p>
-          <Button />
-          <button className="btn btn-secondary rounded-full">Add</button>
+          <CurrentBtn product={product[0]} count={count} setCount={setCount} />
+
           <p className="text-gray-500 text-md">
             <span className="font-bold text-lg">Description:</span> {text}
           </p>
