@@ -1,14 +1,26 @@
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 
 import { Link } from "react-router-dom";
+import useOrders from "../../customeHook/useOrders";
 
 import CurrentBtn from "../CurrentBtn";
 
 const Product = ({ product, value }) => {
   const { _id, price, image, category, name, text } = product;
-  const [count, setCount] = useState(0);
 
+  const [updateCount, setUpdateCount] = useState(0);
+  const [orders, refetch] = useOrders("order");
+
+  useEffect(() => {
+    if (orders) {
+      const updateCount = orders?.filter((order) => order._id === _id);
+      if (updateCount[0]?.quantity) {
+        setUpdateCount(updateCount[0]?.quantity);
+      }
+    }
+  }, [orders, _id]);
   return (
     <div className=" p-5 my-shadow  h-full">
       <Link to={`/product/${_id}`} state={{ value }}>
@@ -24,7 +36,12 @@ const Product = ({ product, value }) => {
         <div className="flex justify-between items-center">
           <p className="text-red-900 text-2xl font-bold">$ {price}</p>
 
-          <CurrentBtn product={product} count={count} setCount={setCount} />
+          <CurrentBtn
+            product={product}
+            refetch={refetch}
+            count={updateCount}
+            setCount={setUpdateCount}
+          />
         </div>
       </div>
     </div>

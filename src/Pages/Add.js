@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-const Add = ({ setCount, count, product }) => {
+const Add = ({ setCount, count, product, refetch }) => {
   const { name, price, image, text, _id } = product;
   const email = "mdriazuddin417@gmail.com";
   const cart = {
@@ -19,6 +19,7 @@ const Add = ({ setCount, count, product }) => {
     await axios
       .post("http://localhost:5000/order", cart)
       .then((res) => console.log(res.data));
+    refetch();
   };
   return (
     <div

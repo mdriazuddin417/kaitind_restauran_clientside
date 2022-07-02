@@ -1,11 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { BsCart2 } from "react-icons/bs";
-import useProducts from "../customeHook/useProducts";
+
 import axios from "axios";
 import { useQuery } from "react-query";
 import Loading from "./Loading";
-import { useEffect } from "react";
+
 const Header = () => {
   window.addEventListener("scroll", function () {
     if (window.pageYOffset > 100) {
@@ -35,6 +35,7 @@ const Header = () => {
     for (let order of orders) {
       quantity = quantity + order.quantity;
     }
+    refetch();
   }
 
   return (
