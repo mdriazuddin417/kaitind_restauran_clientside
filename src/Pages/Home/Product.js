@@ -4,23 +4,27 @@ import { useState } from "react";
 
 import { Link } from "react-router-dom";
 import useOrders from "../../customeHook/useOrders";
+import CartModal from "../CartModal";
 
 import CurrentBtn from "../CurrentBtn";
 
-const Product = ({ product, value }) => {
+const Product = ({ product, value, refetch }) => {
   const { _id, price, image, category, name, text } = product;
 
   const [updateCount, setUpdateCount] = useState(0);
-  const [orders, refetch] = useOrders("order");
+  const [orders, refetcher] = useOrders("order");
 
   useEffect(() => {
     if (orders) {
       const updateCount = orders?.filter((order) => order._id === _id);
       if (updateCount[0]?.quantity) {
         setUpdateCount(updateCount[0]?.quantity);
+        refetcher();
+      } else {
+        setUpdateCount(0);
       }
     }
-  }, [orders, _id]);
+  }, [orders, _id, refetcher]);
   return (
     <div className=" p-5 my-shadow  h-full">
       <Link to={`/product/${_id}`} state={{ value }}>
@@ -39,6 +43,7 @@ const Product = ({ product, value }) => {
           <CurrentBtn
             product={product}
             refetch={refetch}
+            refetcher={refetcher}
             count={updateCount}
             setCount={setUpdateCount}
           />

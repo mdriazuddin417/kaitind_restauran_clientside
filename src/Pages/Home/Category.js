@@ -1,11 +1,13 @@
 import React from "react";
 import Loading from "../../component/Loading";
+import useOrders from "../../customeHook/useOrders";
 
 import useProducts from "../../customeHook/useProducts";
 import Product from "./Product";
 
 const Category = () => {
-  const [allday] = useProducts("allday");
+  // const [allday] = useProducts("allday");
+  const [allday, refetch] = useOrders("allday");
   const [sandwich] = useProducts("sandwich");
   const [burgers] = useProducts("burgers");
   const [fresh] = useProducts("fresh");
@@ -19,7 +21,7 @@ const Category = () => {
   return (
     <div className="grid grid-cols-5 p-5 gap-5 " id="nav">
       <div className=" ">
-        <ul className="space-y-5 sticky top-48">
+        <ul className="space-y-5 sticky top-24">
           {/* <!-- Sidebar content here --> */}
           <li className="my-category">
             <a href={"#allday"}>All day breakfast</a>
@@ -61,7 +63,12 @@ const Category = () => {
           </h2>
           <div className="grid lg:gird-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
             {allday?.map((product) => (
-              <Product product={product} value={allday} key={product._id} />
+              <Product
+                refetch={refetch}
+                product={product}
+                value={allday}
+                key={product._id}
+              />
             ))}
           </div>
         </section>

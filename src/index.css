@@ -25,4 +25,9 @@ body {
 html{
   scroll-behavior: smooth;
 }
-
+.menu-visibility{
+  visibility:hidden !important;
+}
+.menu-shadow{
+  box-shadow: -2px 0px 10px 0px #ddd !important;
+}

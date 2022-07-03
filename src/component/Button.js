@@ -1,28 +1,29 @@
 import axios from "axios";
 import React, { useState } from "react";
-
-import { toast } from "react-toastify";
-import useOrders from "../customeHook/useOrders";
-
-const Button = ({ product, count, setCount, refetch }) => {
+const Button = ({ product, count, setCount, refetch, refetcher }) => {
+  const [loading, setLoading] = useState(false);
   const handleDecreaseCount = async () => {
+    setLoading(true);
     setCount(count - 1);
     updateQuantity(count - 1);
     refetch();
+    refetcher();
   };
   const handleIncrease = async () => {
+    setLoading(true);
     setCount(count + 1);
     updateQuantity(count + 1);
     refetch();
+    refetcher();
   };
   const updateQuantity = async (countValue) => {
-    console.log(countValue);
     if (countValue === 0) {
       await axios
         .delete(`http://localhost:5000/order/${product._id}`)
         .then((res) => {
-          toast("Delete");
-          console.log("delete", res.data);
+          setLoading(false);
+          refetch();
+          refetcher();
         });
     }
     await axios
@@ -30,19 +31,32 @@ const Button = ({ product, count, setCount, refetch }) => {
         quantity: countValue,
       })
       .then((res) => {
+        setLoading(false);
         refetch();
-        console.log(res.data);
+        refetcher();
       });
   };
   return (
     <div className="flex bg-[tomato] w-[120px] rounded-full justify-around items-center p-1 text-white font-bold">
-      <p className="cursor-pointer" onClick={handleDecreaseCount}>
+      <p
+        className="cursor-pointer hover:text-gray-500"
+        onClick={handleDecreaseCount}
+      >
         -
       </p>
-      <p className="w-[30px] h-[30px] rounded-full my-shadow flex items-center justify-center">
-        {count || 0}
+      <p
+        className={`w-[30px] h-[30px] rounded-full my-shadow flex items-center justify-center `}
+      >
+        {loading ? (
+          <div class="w-6 h-6 border-b-2 border-white rounded-full animate-spin"></div>
+        ) : (
+          count || 0
+        )}
       </p>
-      <p className="cursor-pointer" onClick={handleIncrease}>
+      <p
+        className="cursor-pointer hover:text-gray-500"
+        onClick={handleIncrease}
+      >
         +
       </p>
     </div>
