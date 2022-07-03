@@ -12,19 +12,18 @@ const Product = ({ product, value, refetch }) => {
   const { _id, price, image, category, name, text } = product;
 
   const [updateCount, setUpdateCount] = useState(0);
-  const [orders, refetcher] = useOrders("order");
+  const [orders] = useOrders("order");
 
   useEffect(() => {
     if (orders) {
       const updateCount = orders?.filter((order) => order._id === _id);
       if (updateCount[0]?.quantity) {
         setUpdateCount(updateCount[0]?.quantity);
-        refetcher();
       } else {
         setUpdateCount(0);
       }
     }
-  }, [orders, _id, refetcher]);
+  }, [orders, _id]);
   return (
     <div className=" p-5 my-shadow  h-full">
       <Link to={`/product/${_id}`} state={{ value }}>
@@ -43,7 +42,6 @@ const Product = ({ product, value, refetch }) => {
           <CurrentBtn
             product={product}
             refetch={refetch}
-            refetcher={refetcher}
             count={updateCount}
             setCount={setUpdateCount}
           />

@@ -1,20 +1,18 @@
 import axios from "axios";
 import React, { useState } from "react";
-const Button = ({ product, count, setCount, refetch, refetcher }) => {
+const Button = ({ product, count, setCount, refetch }) => {
   const [loading, setLoading] = useState(false);
   const handleDecreaseCount = async () => {
     setLoading(true);
     setCount(count - 1);
     updateQuantity(count - 1);
     refetch();
-    refetcher();
   };
   const handleIncrease = async () => {
     setLoading(true);
     setCount(count + 1);
     updateQuantity(count + 1);
     refetch();
-    refetcher();
   };
   const updateQuantity = async (countValue) => {
     if (countValue === 0) {
@@ -23,7 +21,6 @@ const Button = ({ product, count, setCount, refetch, refetcher }) => {
         .then((res) => {
           setLoading(false);
           refetch();
-          refetcher();
         });
     }
     await axios
@@ -33,7 +30,6 @@ const Button = ({ product, count, setCount, refetch, refetcher }) => {
       .then((res) => {
         setLoading(false);
         refetch();
-        refetcher();
       });
   };
   return (

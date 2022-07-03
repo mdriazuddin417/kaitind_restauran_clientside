@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-const Add = ({ setCount, count, product, refetch, refetcher }) => {
+const Add = ({ setCount, count, product, refetch }) => {
   const { name, price, image, text, _id } = product;
   const email = "mdriazuddin417@gmail.com";
   const cart = {
@@ -15,7 +15,7 @@ const Add = ({ setCount, count, product, refetch, refetcher }) => {
   };
   const handleBtn = async () => {
     setCount(count + 1);
-    refetcher();
+
     await axios.post("http://localhost:5000/order", cart).then((res) => {
       refetch();
     });
