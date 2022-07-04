@@ -35,3 +35,9 @@ html{
 .my-input{
   @apply mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-[#ff5200]  block  rounded-md sm:text-sm w-2/3
 }
+.my-modal{
+  background: #ECF0F3;
+box-shadow:  5px 5px 10px #c5c5c5,
+             -5px -5px 10px #fbfbfb;
+            
+}

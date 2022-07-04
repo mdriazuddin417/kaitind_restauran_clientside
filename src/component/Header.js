@@ -1,10 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { BsCart2 } from "react-icons/bs";
-
-import axios from "axios";
-import { useQuery } from "react-query";
 import Loading from "./Loading";
+import useOrders from "../customeHook/useOrders";
 
 const Header = () => {
   // window.addEventListener("scroll", function () {
@@ -16,18 +14,7 @@ const Header = () => {
   //       .classList.remove("sticky", "z-50", "shadow");
   //   }
   // });
-  const {
-    data: parts,
-    isLoading,
-    refetch,
-  } = useQuery(
-    "parts",
-    async () => await axios.get("http://localhost:5000/order"),
-  );
-  if (isLoading) {
-    <Loading />;
-  }
-  const orders = parts?.data;
+  const [orders, refetch, isLoading] = useOrders("order");
 
   let quantity = 0;
 
@@ -59,6 +46,7 @@ const Header = () => {
               >
                 <BsCart2 className="text-2xl text-white " />
                 <span class="indicator-item badge badge-secondary">
+                  {isLoading && <Loading />}
                   {quantity}
                 </span>
               </label>

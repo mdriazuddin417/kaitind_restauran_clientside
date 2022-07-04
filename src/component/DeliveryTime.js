@@ -1,4 +1,5 @@
 import React from "react";
+import CalendarModal from "./CalendarModal";
 
 const DeliveryTime = () => {
   return (
@@ -10,9 +11,15 @@ const DeliveryTime = () => {
           Your order will be delivered within 45 minutes
         </p>
       </div>
-      <p className="text-sm text-[#ff5200] font-bold cursor-pointer">
-        Schedule for later
-      </p>
+      <div>
+        <label
+          for="my-modal-3"
+          className="text-sm text-[#ff5200] font-bold cursor-pointer"
+        >
+          Schedule for later
+        </label>
+      </div>
+      <CalendarModal />
     </div>
   );
 };

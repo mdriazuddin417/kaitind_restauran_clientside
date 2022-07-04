@@ -15,7 +15,7 @@ const useOrders = (value) => {
     <Loading />;
   }
   const orders = parts?.data;
-  return [orders, refetch];
+  return [orders, refetch, isLoading];
 };
 
 export default useOrders;
