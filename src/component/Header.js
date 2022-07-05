@@ -26,7 +26,7 @@ const Header = () => {
   }
 
   return (
-    <div id="nav" className="top-0 st">
+    <div id="nav" className="top-0 sticky z-30 ">
       <div class="navbar bg-base-100 shadow-lg py-5 px-12 ">
         <div class="flex-1">
           <NavLink to={"/"} class="btn btn-ghost normal-case text-xl">
@@ -46,8 +46,11 @@ const Header = () => {
               >
                 <BsCart2 className="text-2xl text-white " />
                 <span class="indicator-item badge badge-secondary">
-                  {isLoading && <Loading />}
-                  {quantity}
+                  {isLoading ? (
+                    <div class="w-3 h-3 border-b-2 border-white rounded-full animate-spin"></div>
+                  ) : (
+                    quantity
+                  )}
                 </span>
               </label>
             </li>

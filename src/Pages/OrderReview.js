@@ -40,17 +40,26 @@ const OrderReview = () => {
           </div>
         </li>
       ))}
-      <Link to={`/order`}>
-        <div className="my-shadow text-center py-3 flex justify-center items-center">
-          <GiShoppingCart className="text-2xl  mr-2" />
-          <h3 className="text-xl font-semibold ">
-            Place Order{"   "}
-            <span className="text-xl font-semibold text-[#ff5200]">
-              ${total}
-            </span>
-          </h3>
+
+      {orders?.length > 0 ? (
+        <Link to={`/order`}>
+          <div className="my-shadow text-center py-3 flex justify-center items-center">
+            <GiShoppingCart className="text-2xl  mr-2" />
+            <h3 className="text-xl font-semibold ">
+              Place Order{"   "}
+              <span className="text-xl font-semibold text-[#ff5200]">
+                ${total}
+              </span>
+            </h3>
+          </div>
+        </Link>
+      ) : (
+        <div className="flex justify-center items-center h-full">
+          <p className="bg-[#ff5200] p-4 rounded-xl text-white text-center">
+            Please browser product
+          </p>
         </div>
-      </Link>
+      )}
     </ul>
   );
 };

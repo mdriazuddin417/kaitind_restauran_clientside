@@ -13,22 +13,24 @@ const DeliveryMethod = () => {
       </p>
       <div className="space-y-5">
         <div>
-          <Link to={"/checkout/paypal"}>
-            <div className="my-modal flex justify-center items-center hover:bg-[#ff5200]  duration-500 p-2 cursor-pointer hover:text-white rounded">
-              <img src={img1} alt="" className="w-[50px]" />
-              <span className="text-xl font-semibold ml-2">PayPal</span>
-            </div>
-          </Link>
+          <label
+            for="my-modal-2"
+            className="my-modal flex justify-center items-center hover:bg-[#ff5200]  duration-500 p-2 cursor-pointer hover:text-white rounded"
+          >
+            <img src={img1} alt="" className="w-[50px]" />
+            <span className="text-xl font-semibold ml-2">PayPal</span>
+          </label>
         </div>
         <div>
-          <Link to={"/checkout/card"}>
-            <div className="my-modal flex justify-center items-center hover:bg-[#ff5200]  duration-500 p-2 cursor-pointer hover:text-white rounded">
-              <img src={img2} alt="" className="w-[50px]" />
-              <span className="text-xl font-semibold ml-2">
-                Debit credit card
-              </span>
-            </div>
-          </Link>
+          <label
+            for="my-modal-1"
+            className="my-modal flex justify-center items-center hover:bg-[#ff5200]  duration-500 p-2 cursor-pointer hover:text-white rounded"
+          >
+            <img src={img2} alt="" className="w-[50px]" />
+            <span className="text-xl font-semibold ml-2">
+              Debit credit card
+            </span>
+          </label>
         </div>
       </div>
       <div className="flex justify-around items-center gap-5">

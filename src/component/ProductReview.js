@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import useOrders from "../customeHook/useOrders";
+import Card from "../Pages/Card";
+import Paypal from "../Pages/Paypal";
 
 import Button from "./Button";
 import CalendarModal from "./CalendarModal";
@@ -22,7 +24,7 @@ const ProductReview = () => {
   return (
     <div className="space-y-5 shadow-lg border border-gray-200 p-10">
       <h3 className="text-xl font-semibold">Product Review</h3>
-      <div className="h-[500px] overflow-y-auto ">
+      <div className="max-h-[500px] overflow-y-auto ">
         {isLoading && <Loading />}
         <ul class="menu p-4 overflow-y-auto  bg-base-100 space-y-3 ">
           {orders?.map((order) => {
@@ -75,6 +77,8 @@ const ProductReview = () => {
           </p>
         </div>
       </div>
+      <Paypal price={updateTotal} />
+      <Card price={updateTotal} />
     </div>
   );
 };

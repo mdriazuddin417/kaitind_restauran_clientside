@@ -3,6 +3,7 @@ import React from "react";
 import DeliveryAddress from "../component/DeliveryAddress";
 import DeliveryMethod from "../component/DeliveryMethod";
 import DeliveryTime from "../component/DeliveryTime";
+import Help from "../component/Help";
 import ProductReview from "../component/ProductReview";
 const PlaceOrder = () => {
   return (
@@ -17,8 +18,9 @@ const PlaceOrder = () => {
           <DeliveryAddress />
           <DeliveryMethod />
         </div>
-        <div>
+        <div className="space-y-5">
           <ProductReview />
+          <Help />
         </div>
       </div>
     </div>
