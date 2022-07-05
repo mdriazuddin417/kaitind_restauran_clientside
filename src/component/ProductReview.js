@@ -4,7 +4,7 @@ import Card from "../Pages/Card";
 import Paypal from "../Pages/Paypal";
 
 import Button from "./Button";
-import CalendarModal from "./CalendarModal";
+
 import Loading from "./Loading";
 
 const ProductReview = () => {

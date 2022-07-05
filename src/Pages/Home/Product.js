@@ -24,7 +24,7 @@ const Product = ({ product, value, refetch }) => {
     }
   }, [orders, _id]);
   return (
-    <div className=" p-5 my-shadow  h-full">
+    <div className=" p-5 my-shadow my-modal h-full">
       <Link to={`/product/${_id}`} state={{ value }}>
         <img
           src={image}

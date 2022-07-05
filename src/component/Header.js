@@ -5,15 +5,6 @@ import Loading from "./Loading";
 import useOrders from "../customeHook/useOrders";
 
 const Header = () => {
-  // window.addEventListener("scroll", function () {
-  //   if (window.pageYOffset > 100) {
-  //     document.getElementById("nav").classList.add("sticky", "z-50", "shadow");
-  //   } else {
-  //     document
-  //       .getElementById("nav")
-  //       .classList.remove("sticky", "z-50", "shadow");
-  //   }
-  // });
   const [orders, refetch, isLoading] = useOrders("order");
 
   let quantity = 0;
@@ -57,6 +48,9 @@ const Header = () => {
 
             <li>
               <NavLink to="/login">Login</NavLink>
+            </li>
+            <li>
+              <NavLink to="/singup">Sign UP</NavLink>
             </li>
           </ul>
         </div>

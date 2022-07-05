@@ -1,12 +1,13 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-const DeliveryAddress = () => {
+const DeliveryAddress = ({ onSubmit }) => {
   const {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
   return (
     <div className="space-y-5 shadow-lg border border-gray-200 p-10">
       <h3 className="text-xl font-semibold">Delivery Address</h3>
@@ -60,7 +61,7 @@ const DeliveryAddress = () => {
 
           <input
             type="submit"
-            className=" text-white w-2/3 rounded-lg py-2 bg-gradient-to-t from-red-600 to-[#ff5200] cursor-pointer hover:to-red-600 hover:from-[#ff5200] "
+            className=" text-white w-2/3 rounded-lg py-2 my-btn"
           />
         </form>
       </div>
