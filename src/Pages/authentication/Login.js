@@ -1,13 +1,51 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import auth from "../../firebase.init";
+import SocialLogin from "./SocialLogin";
+import { BiHide, BiShow } from "react-icons/bi";
+import { useState } from "react";
+import LoadingAnim from "../../component/LoadingAnim";
+import ResetModal from "./ResetModal";
 const Login = () => {
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
+  const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    signInWithEmailAndPassword(data?.email, data?.password);
+  };
+  if (user) {
+    toast.success("Log In success");
+    navigate(from, { replace: true });
+  }
+  useEffect(() => {
+    if (error) {
+      console.log(error.message);
+      switch (error.message) {
+        case "Firebase: Error (auth/wrong-password).":
+          toast.error("Wrong Password");
+          break;
+        case "Firebase: Error (auth/user-not-found).":
+          toast.error("Incorrect Email");
+          break;
+
+        default:
+          toast.error("Please enter a valid information");
+          break;
+      }
+    }
+  }, [error]);
   return (
     <div className="h-[80vh] flex justify-center items-center">
       <div className="min-w-[300px] w-[450px] my-modal rounded-lg overflow-hidden p-10 relative my-parent-path">
@@ -45,11 +83,11 @@ const Login = () => {
                 </span>
               )}
             </div>
-            <div>
+            <div className="relative">
               <input
-                type="password"
+                type={open ? "text" : "password"}
                 placeholder="Password"
-                className="my-input-2"
+                className="my-input-2 "
                 {...register("password", {
                   required: { value: true, message: "Password is Required" },
                   pattern: {
@@ -59,6 +97,19 @@ const Login = () => {
                   },
                 })}
               />
+              <div className="absolute top-3 right-3">
+                {!open ? (
+                  <BiHide
+                    className="text-2xl text-gray-600"
+                    onClick={() => setOpen(!open)}
+                  />
+                ) : (
+                  <BiShow
+                    className="text-2xl text-gray-600"
+                    onClick={() => setOpen(!open)}
+                  />
+                )}
+              </div>
               {errors.password?.type === "required" && (
                 <span className="text-red-500 text-sm mt-2 ml-2">
                   {errors?.password?.message}
@@ -70,6 +121,7 @@ const Login = () => {
                 </span>
               )}
             </div>
+            {loading && <LoadingAnim />}
             <div>
               <input
                 type="submit"
@@ -78,8 +130,20 @@ const Login = () => {
               />
             </div>
           </form>
+          <div className="flex justify-between items-center text-sm mt-2">
+            <Link to={"/signup"}>
+              <p className="link hover:text-blue-800">
+                I have not Account ?Register{" "}
+              </p>
+            </Link>
+            <label for="passwordReset" className="link hover:text-blue-800">
+              Forget Password
+            </label>
+          </div>
+          <SocialLogin />
         </div>
       </div>
+      <ResetModal />
     </div>
   );
 };

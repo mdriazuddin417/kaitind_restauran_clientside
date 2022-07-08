@@ -44,7 +44,7 @@ const Category = () => {
           <li className="my-category">
             <a href={"#noodle"}>Noodle Bowls</a>
           </li>
-          <li className="my-category">
+          <li className="my-category ">
             <a href={"#biryani"}>Biryanis & Thalis</a>
           </li>
           <li className="my-category">

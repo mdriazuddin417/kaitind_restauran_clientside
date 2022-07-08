@@ -1,5 +1,7 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import auth from "../firebase.init";
 const DeliveryAddress = ({ onSubmit }) => {
   const {
     register,
@@ -7,6 +9,7 @@ const DeliveryAddress = ({ onSubmit }) => {
     handleSubmit,
     reset,
   } = useForm();
+  const [user, loading] = useAuthState(auth);
 
   return (
     <div className="space-y-5 shadow-lg border border-gray-200 p-10">
@@ -15,26 +18,22 @@ const DeliveryAddress = ({ onSubmit }) => {
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
           <div>
             <input
-              {...register("name", { required: true })}
+              {...register("name")}
               type="text"
               class="my-input"
-              placeholder="Name"
+              value={user?.displayName}
+              disabled
             />
-            {errors.name?.type === "required" && (
-              <p className="text-sm text-red-600">Name is required</p>
-            )}
           </div>
 
           <div>
             <input
-              {...register("email", { required: true })}
+              {...register("email")}
               type="email"
-              class="my-input"
-              placeholder="Email"
+              class="my-input "
+              value={user?.email}
+              disabled
             />
-            {errors.email?.type === "required" && (
-              <p className="text-sm text-red-600">Email is required</p>
-            )}
           </div>
           <div>
             <input

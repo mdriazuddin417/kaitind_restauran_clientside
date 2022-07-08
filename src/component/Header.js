@@ -1,11 +1,17 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { BsCart2 } from "react-icons/bs";
+import { GrUserAdmin } from "react-icons/gr";
 import Loading from "./Loading";
 import useOrders from "../customeHook/useOrders";
+import { signOut } from "firebase/auth";
+import auth from "../firebase.init";
+import { useAuthState } from "react-firebase-hooks/auth";
+import logo from "../assets/images/logo2.png";
 
 const Header = () => {
   const [orders, refetch, isLoading] = useOrders("order");
+  const [user] = useAuthState(auth);
 
   let quantity = 0;
 
@@ -21,7 +27,7 @@ const Header = () => {
       <div class="navbar bg-base-100 shadow-lg py-5 px-12 ">
         <div class="flex-1">
           <NavLink to={"/"} class="btn btn-ghost normal-case text-xl">
-            daisyUI
+            <img src={logo} alt="" className="w-[50px]" />
           </NavLink>
         </div>
         <div class="flex-none">
@@ -30,7 +36,7 @@ const Header = () => {
               <NavLink to="/home">Home</NavLink>
             </li>
 
-            <li className="">
+            <li>
               <label
                 for="my-drawer-4"
                 class="drawer-button btn btn-primary indicator"
@@ -45,13 +51,29 @@ const Header = () => {
                 </span>
               </label>
             </li>
+            {!user ? (
+              <li class="dropdown dropdown-end">
+                <label tabindex="0">
+                  <GrUserAdmin />
+                </label>
+                <ul
+                  tabindex="0"
+                  class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-40 text-sm space-y-2 "
+                >
+                  <li>
+                    <NavLink to="/login">Login</NavLink>
+                  </li>
 
-            <li>
-              <NavLink to="/login">Login</NavLink>
-            </li>
-            <li>
-              <NavLink to="/singup">Sign UP</NavLink>
-            </li>
+                  <li>
+                    <NavLink to="/signup">SignUp</NavLink>
+                  </li>
+                </ul>
+              </li>
+            ) : (
+              <li>
+                <div onClick={() => signOut(auth)}>SignOut</div>
+              </li>
+            )}
           </ul>
         </div>
       </div>

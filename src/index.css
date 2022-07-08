@@ -6,7 +6,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-
+  
 }
 
 .btn-gradient {
@@ -23,9 +23,8 @@ body {
   @apply hover:underline underline-offset-2 decoration-[tomato] decoration-2 transition-all  hover:text-lg 
 }
 
-html{
-  scroll-behavior: smooth;
-}
+
+
 .menu-visibility{
   visibility:hidden !important;
 }
@@ -60,4 +59,24 @@ box-shadow:  5px 5px 10px #c5c5c5,
 .my-input-2{
   @apply w-full py-3 px-2 rounded-lg focus:outline-[#ff5200] border border-gray-300
 
+}
+.blue-circle{
+  animation-delay: 0.1s;
+}
+.green-circle{
+  animation-delay: 0.2s;
+}
+.red-circle{
+  animation-delay: 0.3s;
+}
+.yellow-circle{
+  animation-delay: 0.4s;
+}
+
+::-webkit-scrollbar{
+  background: #ECF0F3;
+  width: 0px;
+}
+::-webkit-scrollbar-thumb{
+  background: #fff;
 }

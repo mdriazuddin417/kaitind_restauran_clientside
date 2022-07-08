@@ -1,13 +1,63 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import SocialLogin from "./SocialLogin";
+import { BiHide, BiShow } from "react-icons/bi";
+
+import {
+  useCreateUserWithEmailAndPassword,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import { toast } from "react-toastify";
+import LoadingAnim from "../../component/LoadingAnim";
+
 const SignUp = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const {
     register,
     formState: { errors },
+    reset,
     handleSubmit,
   } = useForm();
+  const [open, setOpen] = useState(false);
+  const [passwordError, setPasswordError] = useState("");
+  //======================Authentication
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  const [updateProfile, updating, updatingError] = useUpdateProfile(auth);
+  ///=====================================================
+  const onSubmit = async (data) => {
+    if (data?.password === data?.conpass) {
+      setOpen(false);
+      setPasswordError("");
+      await createUserWithEmailAndPassword(data?.email, data?.password);
+      await updateProfile({ displayName: data?.name });
+      reset();
+    } else {
+      setPasswordError("Password not match");
+    }
+  };
+  if (user) {
+    navigate(from, { replace: true });
+    toast.success("Sign Up complete");
+  }
+  useEffect(() => {
+    if (error) {
+      switch (error.message) {
+        case "Firebase: Error (auth/email-already-in-use).":
+          toast.error("Please enter a new email address");
+          break;
 
-  const onSubmit = (data) => console.log(data);
+        default:
+          toast.error("Please enter a valid information");
+          break;
+      }
+    }
+  }, [error]);
   return (
     <div className="h-[80vh] flex justify-center items-center">
       <div className="min-w-[300px] w-[450px] my-modal rounded-lg overflow-hidden p-10 relative my-parent-path">
@@ -56,9 +106,9 @@ const SignUp = () => {
                 </span>
               )}
             </div>
-            <div>
+            <div className="relative">
               <input
-                type="password"
+                type={open ? "text" : "password"}
                 placeholder="Password"
                 className="my-input-2"
                 {...register("password", {
@@ -70,6 +120,19 @@ const SignUp = () => {
                   },
                 })}
               />
+              <div className="absolute top-3 right-3">
+                {!open ? (
+                  <BiHide
+                    className="text-2xl text-gray-600"
+                    onClick={() => setOpen(!open)}
+                  />
+                ) : (
+                  <BiShow
+                    className="text-2xl text-gray-600"
+                    onClick={() => setOpen(!open)}
+                  />
+                )}
+              </div>
               {errors.password?.type === "required" && (
                 <span className="text-red-500 text-sm mt-2 ml-2">
                   {errors?.password?.message}
@@ -93,15 +156,27 @@ const SignUp = () => {
                   Confirm Password is required
                 </p>
               )}
+
+              <p className="text-red-500 text-sm">{passwordError}</p>
             </div>
+            {loading && <LoadingAnim />}
             <div>
               <input
+                className="w-full py-3 px-2 rounded-lg my-btn text-white font-samibold text-lg "
                 type="submit"
                 value={"Submit"}
-                className="w-full py-3 px-2 rounded-lg my-btn text-white font-samibold text-lg"
               />
             </div>
           </form>
+          <div className="flex justify-between items-center text-sm mt-2">
+            <Link to={"/login"}>
+              <p className="link hover:text-blue-800">I have a Account</p>
+            </Link>
+            <Link to={"/home"}>
+              <p className="link hover:text-blue-800">Return Home</p>
+            </Link>
+          </div>
+          <SocialLogin />
         </div>
       </div>
     </div>

@@ -7,9 +7,9 @@ import OrderReview from "./OrderReview";
 
 const CartModal = () => {
   return (
-    <div class="drawer drawer-end">
+    <div class="drawer drawer-end ">
       <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content">
+      <div class="drawer-content scroll-smooth">
         <Banner />
         <CategoryHeader />
         <Category />
