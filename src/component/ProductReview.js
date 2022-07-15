@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import useOrders from "../customeHook/useOrders";
 import Card from "../Pages/Card";
 import Paypal from "../Pages/Paypal";
@@ -20,7 +21,10 @@ const ProductReview = () => {
   const fee = 20;
   const text = parseInt(total * (5 / 100));
   const updateTotal = text + fee + total;
-
+  const navigate = useNavigate();
+  if (orders.length === 0) {
+    navigate("/");
+  }
   return (
     <div className="space-y-5 shadow-lg border border-gray-200 p-10">
       <h3 className="text-xl font-semibold">Product Review</h3>

@@ -10,6 +10,7 @@ const SocialLogin = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+
   if (user) {
     toast.success("Login success");
     navigate(from, { replace: true });

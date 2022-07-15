@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../component/Button";
-import useOrders from "../customeHook/useOrders";
+
 import { GiShoppingCart } from "react-icons/gi";
+import useOrderQuery from "../customeHook/useOrderQuery";
 const OrderReview = () => {
   const [count, setCount] = useState(0);
-  const [orders, refetch] = useOrders("order");
+  const [orders, refetch] = useOrderQuery("order");
   let total = 0;
   if (orders) {
     for (const order of orders) {
@@ -13,6 +14,7 @@ const OrderReview = () => {
     }
     refetch();
   }
+
   return (
     <ul class="menu p-4 overflow-y-auto w-[22rem] bg-base-100   space-y-3 menu-shadow">
       {orders?.map((order) => (

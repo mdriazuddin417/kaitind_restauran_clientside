@@ -21,7 +21,7 @@ const Category = () => {
   return (
     <div className="grid grid-cols-5 p-5 gap-5 " id="nav">
       <div className=" ">
-        <ul className="space-y-5 sticky top-24">
+        <ul className="space-y-5 sticky top-48">
           {/* <!-- Sidebar content here --> */}
           <li className="my-category">
             <a href={"#allday"}>All day breakfast</a>
@@ -56,8 +56,8 @@ const Category = () => {
         </ul>
       </div>
       {/* <!-- Page content here --> */}
-      <div className="col-span-4">
-        <section id="allday" className="mb-10">
+      <div className="col-span-4 ">
+        <section id="allday" className="mb-10 lg:p-2 md:p-2 p-10">
           <h2 className="lg:text-4xl md:text-4xl text-xl font-semibold mb-3">
             All day breakfast
           </h2>
@@ -72,7 +72,7 @@ const Category = () => {
             ))}
           </div>
         </section>
-        <section id="sandwich" className="mb-10">
+        <section id="sandwich" className="mb-10 lg:p-2 md:p-2 p-10">
           <h2 className="lg:text-4xl md:text-4xl text-xl font-semibold mb-3">
             Sandwiches
           </h2>
@@ -82,7 +82,7 @@ const Category = () => {
             ))}
           </div>
         </section>
-        <section id="burgers" className="mb-10">
+        <section id="burgers" className="mb-10 lg:p-2 md:p-2 p-10">
           <h2 className="lg:text-4xl md:text-4xl text-xl font-semibold mb-3">
             Burgers & Wraps
           </h2>
@@ -92,7 +92,7 @@ const Category = () => {
             ))}
           </div>
         </section>
-        <section id="fresh" className="mb-10">
+        <section id="fresh" className="mb-10 lg:p-2 md:p-2 p-10">
           <h2 className="lg:text-4xl md:text-4xl text-xl font-semibold mb-3">
             Fresh Desserts
           </h2>
@@ -102,7 +102,7 @@ const Category = () => {
             ))}
           </div>
         </section>
-        <section id="newarrival" className="mb-10">
+        <section id="newarrival" className="mb-10 lg:p-2 md:p-2 p-10">
           <h2 className="lg:text-4xl md:text-4xl text-xl font-semibold mb-3">
             New Arrivals
           </h2>
@@ -112,7 +112,7 @@ const Category = () => {
             ))}
           </div>
         </section>
-        <section id="rice" className="mb-10">
+        <section id="rice" className="mb-10 lg:p-2 md:p-2 p-10">
           <h2 className="lg:text-4xl md:text-4xl text-xl font-semibold mb-3">
             Rice Bowls
           </h2>
@@ -122,7 +122,7 @@ const Category = () => {
             ))}
           </div>
         </section>
-        <section id="noodle" className="mb-10">
+        <section id="noodle" className="mb-10 lg:p-2 md:p-2 p-10">
           <h2 className="lg:text-4xl md:text-4xl text-xl font-semibold mb-3">
             Noodle Bowls
           </h2>
@@ -132,7 +132,7 @@ const Category = () => {
             ))}
           </div>
         </section>
-        <section id="biryani" className="mb-10">
+        <section id="biryani" className="mb-10 lg:p-2 md:p-2 p-10">
           <h2 className="lg:text-4xl md:text-4xl text-xl font-semibold mb-3">
             Biryanis & Thalis
           </h2>
@@ -142,7 +142,7 @@ const Category = () => {
             ))}
           </div>
         </section>
-        <section id="sides" className="mb-10">
+        <section id="sides" className="mb-10 lg:p-2 md:p-2 p-10">
           <h2 className="lg:text-4xl md:text-4xl text-xl font-semibold mb-3">
             Sides & Beverages
           </h2>
@@ -152,7 +152,7 @@ const Category = () => {
             ))}
           </div>
         </section>
-        <section id="accompaniments" className="mb-10">
+        <section id="accompaniments" className="mb-10 lg:p-2 md:p-2 p-10">
           <h2 className="lg:text-4xl md:text-4xl text-xl font-semibold mb-3">
             {" "}
             Accompaniments

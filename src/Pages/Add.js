@@ -1,11 +1,11 @@
 import React from "react";
 import axios from "axios";
-
 const Add = ({ setCount, count, product, refetch }) => {
+  // const [user] = useAuthState(auth);
   const { name, price, image, text, _id } = product;
-  const email = "mdriazuddin417@gmail.com";
+  // const email = user?.email;
   const cart = {
-    email,
+    // email,
     _id,
     name,
     price,
