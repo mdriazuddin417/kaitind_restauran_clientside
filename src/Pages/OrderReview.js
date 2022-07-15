@@ -16,7 +16,7 @@ const OrderReview = () => {
   }
 
   return (
-    <ul class="menu p-4 overflow-y-auto w-[22rem] bg-base-100   space-y-3 menu-shadow">
+    <ul class="menu px-4 overflow-y-auto w-[22rem] bg-base-100   space-y-3 menu-shadow pt-28 pb-10">
       {orders?.map((order) => (
         <li className="cursor-none flex flex-col  ">
           <div className=" my-shadow flex justify-between items-center border ">
