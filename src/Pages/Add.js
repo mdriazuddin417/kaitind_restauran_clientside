@@ -16,9 +16,11 @@ const Add = ({ setCount, count, product, refetch }) => {
   const handleBtn = async () => {
     setCount(count + 1);
 
-    await axios.post("http://localhost:5000/order", cart).then((res) => {
-      refetch();
-    });
+    await axios
+      .post("https://kaitind-server.vercel.app/order", cart)
+      .then((res) => {
+        refetch();
+      });
   };
   return (
     <div

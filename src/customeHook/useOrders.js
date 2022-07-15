@@ -10,7 +10,7 @@ const useOrders = (value) => {
     refetch,
   } = useQuery(
     `${value}`,
-    async () => await axios.get(`http://localhost:5000/${value}`),
+    async () => await axios.get(`https://kaitind-server.vercel.app/${value}`),
   );
   if (isLoading) {
     <Loading />;

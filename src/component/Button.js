@@ -17,14 +17,14 @@ const Button = ({ product, count, setCount, refetch }) => {
   const updateQuantity = async (countValue) => {
     if (countValue === 0) {
       await axios
-        .delete(`http://localhost:5000/order/${product._id}`)
+        .delete(`https://kaitind-server.vercel.app/order/${product._id}`)
         .then((res) => {
           setLoading(false);
           refetch();
         });
     }
     await axios
-      .patch(`http://localhost:5000/order/${product._id}`, {
+      .patch(`https://kaitind-server.vercel.app/order/${product._id}`, {
         quantity: countValue,
       })
       .then((res) => {
