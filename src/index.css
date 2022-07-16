@@ -6,7 +6,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  
+  overflow-y: hidden
 }
 
 .btn-gradient {
@@ -73,10 +73,10 @@ box-shadow:  5px 5px 10px #c5c5c5,
   animation-delay: 0.4s;
 }
 
-::-webkit-scrollbar{
+/* ::-webkit-scrollbar{
   background: #ECF0F3;
   width: 0px;
 }
 ::-webkit-scrollbar-thumb{
   background: #fff;
-}
+} */
