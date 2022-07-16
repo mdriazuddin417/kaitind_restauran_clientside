@@ -14,7 +14,7 @@ const CheckoutForm = ({ price, email, name }) => {
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch("https://kaitind-server.vercel.app/create-payment-intent ", {
+    fetch("https://kaitind-server.herokuapp.com/create-payment-intent ", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ price }),
@@ -79,7 +79,7 @@ const CheckoutForm = ({ price, email, name }) => {
       toast.success("Congrats,Your payment successfully.");
       setId(paymentIntent.id);
       await axios
-        .delete(`https://kaitind-server.vercel.app/order?email=${email}`)
+        .delete(`https://kaitind-server.herokuapp.com/order?email=${email}`)
         .then((res) => {
           setLoading(false);
           if (res.data) {

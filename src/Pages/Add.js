@@ -17,7 +17,7 @@ const Add = ({ setCount, count, product, refetch }) => {
     setCount(count + 1);
 
     await axios
-      .post("https://kaitind-server.vercel.app/order", cart)
+      .post("https://kaitind-server.herokuapp.com/order", cart)
       .then((res) => {
         refetch();
       });

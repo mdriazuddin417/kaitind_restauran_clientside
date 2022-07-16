@@ -13,7 +13,8 @@ const useOrderQuery = (value) => {
     refetch,
   } = useQuery(
     `${value}`,
-    async () => await axios.get(`https://kaitind-server.vercel.app/${value}`),
+    async () =>
+      await axios.get(`https://kaitind-server.herokuapp.com/${value}`),
   );
   if ((isLoading, loading)) {
     <Loading />;
