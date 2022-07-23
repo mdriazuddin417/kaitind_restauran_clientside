@@ -1,0 +1,18 @@
+[debug] [2022-07-16T16:32:02.659Z] ----------------------------------------------------------------------
+[debug] [2022-07-16T16:32:02.662Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\HC\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-07-16T16:32:02.663Z] CLI Version:   11.1.0
+[debug] [2022-07-16T16:32:02.663Z] Platform:      win32
+[debug] [2022-07-16T16:32:02.664Z] Node Version:  v16.15.1
+[debug] [2022-07-16T16:32:02.664Z] Time:          Sat Jul 16 2022 22:32:02 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-07-16T16:32:02.665Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-07-16T16:32:02.777Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-07-16T16:32:02.778Z] > authorizing via signed-in user (mdriazuddin417@gmail.com)
+[debug] [2022-07-16T16:32:02.778Z] [iam] checking project kaitind-restauran for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-07-16T16:32:02.780Z] > refreshing access token with scopes: []
+[debug] [2022-07-16T16:32:02.783Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-07-16T16:32:02.783Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-07-16T16:32:22.951Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-07-16T16:32:22.952Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-07-16T16:32:22.965Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/kaitind-restauran:testIamPermissions [none]
+[debug] [2022-07-16T16:32:22.966Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/kaitind-restauran:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}

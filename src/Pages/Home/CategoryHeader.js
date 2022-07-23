@@ -6,10 +6,7 @@ import { Link } from "react-router-dom";
 
 const CategoryHeader = () => {
   return (
-    <div
-      className="max-w-7xl mx-auto top-24  lg:top-[90px] z-30 sticky "
-      id="navbar"
-    >
+    <div className="max-w-7xl mx-auto top-0 z-30 sticky " id="navbar">
       <hr />
       <div class="navbar bg-base-100 py-2 px-12 ">
         <div class="flex-1">

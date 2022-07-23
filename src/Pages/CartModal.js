@@ -14,7 +14,7 @@ const CartModal = () => {
         <CategoryHeader />
         <Category />
       </div>
-      <div class="drawer-side">
+      <div class="drawer-side ">
         <label for="my-drawer-4" class="drawer-overlay menu-visibility"></label>
 
         <OrderReview />

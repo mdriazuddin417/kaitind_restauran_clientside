@@ -21,7 +21,7 @@ const Category = () => {
   return (
     <div className="grid grid-cols-5 p-5 gap-5 " id="nav">
       <div className=" ">
-        <ul className="space-y-5 sticky top-48">
+        <ul className="space-y-5 sticky top-28">
           {/* <!-- Sidebar content here --> */}
           <li className="my-category">
             <a href={"#allday"}>All day breakfast</a>
